@@ -10,12 +10,14 @@
     "lint:fix": "eslint . --fix",
     "prepare": "husky install",
     "prettier": "prettier --check **/*.ts",
-    "prettier:fix": "prettier --write **/*.ts"
+    "prettier:fix": "prettier --write **/*.ts",
+    "pre-commit": "yarn prettier && yarn lint && yarn typecheck&& npx --no-install lint-staged"
   },
   "keywords": [],
   "author": "GitHubEason <defend.sen@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@commitlint/config-conventional": "^16.2.4",
     "@types/eslint": "^8.4.2",
     "@types/http-status": "^1.1.2",
     "@types/prettier": "^2.6.0",
