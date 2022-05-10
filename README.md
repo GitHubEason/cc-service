@@ -1,10 +1,10 @@
-# Ster server
+# Start server
 ```
 yarn dev
 ```
-# get user
+# get user Postman
 ```
-localhost:8000/api/v1/user
+get localhost:8000/api/v1/user
 ```
 
 # needs to be added
