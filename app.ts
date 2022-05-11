@@ -1,4 +1,4 @@
-require("dotenv").config();
+import { port } from "./src/config/config";
 import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
@@ -12,6 +12,6 @@ app.use(morgan("tiny"));
 /**
  * Server Activation
  */
-app.listen(8080, () => {
-  console.log(`Listening on port ${8080}`);
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
 });
