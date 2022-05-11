@@ -9,6 +9,7 @@ import helmet from "helmet";
 
 import router from "./src/routes";
 import { cors } from "./src/middleware/cors";
+import { logger } from "./src/utils/logger";
 /**
  * App Variables
  */
@@ -33,5 +34,5 @@ app.use(api.prefix, router);
  * Server Activation
  */
 app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
+  logger.info(`Listening on port ${port}`);
 });
