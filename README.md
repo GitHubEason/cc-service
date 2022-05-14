@@ -4,7 +4,7 @@ RESTful APIs using Node.js, Express, and Mongoose.
 
 
 
-## Quick Start
+**Quick Start**
 
 install dependencies
 ```
@@ -15,11 +15,8 @@ npm install
 npm run dev
 ```
 
-## Table of Contents
-
+**Table of Contents**
 - [CourtCanva service](#courtcanva-service)
-  - [Quick Start](#quick-start)
-  - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Commands](#commands)
   - [Environment Variables](#environment-variables)
@@ -44,19 +41,18 @@ npm run dev
 
 Running locally:
 
-```bash
+```
 npm run dev
 ```
 
 ## Environment Variables
 
-The environment variables can be found and modified in the `.env` file. They come with these default values:
+The environment variables can be found and modified in the `.env.example` file. They come with these default values:
 
 ```
 # Port number
-PORT=8080
-API_PREFIX = /api/v1
-## Project Structure
+PORT=
+API_PREFIX =
 ```
 
 ## Project Structure
