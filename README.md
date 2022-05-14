@@ -8,11 +8,11 @@ RESTful APIs using Node.js, Express, and Mongoose.
 
 install dependencies
 ```
-yarn
+npm install
 ```
 
 ```
-yarn dev
+npm run dev
 ```
 
 ## Table of Contents
@@ -23,6 +23,7 @@ yarn dev
   - [Features](#features)
   - [Commands](#commands)
   - [Environment Variables](#environment-variables)
+  - [Project Structure](#project-structure)
   - [API Documentation](#api-documentation)
   - [Logging](#logging)
 
@@ -44,9 +45,8 @@ yarn dev
 Running locally:
 
 ```bash
-yarn dev
+npm run dev
 ```
-
 
 ## Environment Variables
 
@@ -58,6 +58,9 @@ PORT=8080
 API_PREFIX = /api/v1
 ## Project Structure
 ```
+
+## Project Structure
+
 ```
 src\
  |--config\         # Environment variables and configuration related things
@@ -73,7 +76,6 @@ src\
 ## API Documentation
 
 To view the list of available APIs and their specifications, run the server and go to `http://localhost:8080/api-docs/` in your browser. This documentation page is automatically generated using the [swagger](https://swagger.io/) definitions written as comments in the controllers file.
-
 
 ## Logging
 
