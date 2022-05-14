@@ -18,6 +18,7 @@ npm run dev
 **Table of Contents**
 - [CourtCanva service](#courtcanva-service)
   - [Features](#features)
+  - [Node version](#node-version)
   - [Commands](#commands)
   - [Environment Variables](#environment-variables)
   - [Project Structure](#project-structure)
@@ -36,6 +37,11 @@ npm run dev
 - **Git hooks**: with [husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged)
 - **Linting**: with [ESLint](https://eslint.org) and [Prettier](https://prettier.io)
 - **Editor config**: consistent editor configuration using [EditorConfig](https://editorconfig.org)
+
+## Node version
+```
+">=16.0.0 && <17.0.0"
+```
 
 ## Commands
 
