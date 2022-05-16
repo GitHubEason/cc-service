@@ -26,7 +26,7 @@ npm run dev
   - [Logging](#logging)
 
 ## Features
-
+- **NPM**: [npm](https://www.npmjs.com/) package manager
 - **NoSQL database**: [MongoDB](https://www.mongodb.com) object data modeling using [Mongoose](https://mongoosejs.com)
 - **Logging**: using [winston](https://github.com/winstonjs/winston) and [morgan](https://github.com/expressjs/morgan)
 - **API documentation**: with [swagger-jsdoc](https://github.com/Surnet/swagger-jsdoc) and [swagger-ui-express](https://github.com/scottie1984/swagger-ui-express)
@@ -72,7 +72,7 @@ src\
  |--routes\         # Routes
  |--services\       # Business logic (service layer)
  |--utils\          # Utility classes and functions
- |--app.js          # App entry point
+ |--app.ts          # App entry point
 ```
 
 ## API Documentation
