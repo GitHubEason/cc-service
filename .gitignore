@@ -1,9 +1,3 @@
 node_modules
-<<<<<<< HEAD
-.env
-||||||| 9ee22ee
-.evn
-=======
 .env
 yarn.lock
->>>>>>> main
