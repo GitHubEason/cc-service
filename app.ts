@@ -10,6 +10,7 @@ import helmet from "helmet";
 import router from "./src/routes";
 import { cors } from "./src/middleware/cors";
 import { logger } from "./src/utils/logger";
+import { connectToDB } from "./src/utils/db";
 /**
  * App Variables
  */
@@ -27,9 +28,11 @@ const app = express();
 app.use(helmet());
 app.use(cors);
 app.use(express.json());
-app.use(morgan("tiny"));
+app.use(morgan("dev"));
 
 app.use(api.prefix, router);
+
+connectToDB();
 /**
  * Server Activation
  */
