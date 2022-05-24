@@ -20,8 +20,8 @@ import { Request, Response } from "express";
 const getTest = async (req: Request, res: Response) => {
   try {
     res.status(200).send("hello world");
-  } catch (e: any) {
-    res.status(500).send(e.message);
+  } catch (error) {
+    res.status(500).send(error);
   }
 };
 
