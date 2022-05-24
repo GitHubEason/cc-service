@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node index.ts",
-    "test": "jest --coverage",
+    "test": "jest --colors --config jest.config.js --maxWorkers=50%",
     "dev": "ts-node-dev --respawn --pretty --transpile-only index.ts",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -16,7 +16,7 @@
     "prepare": "husky install",
     "prettier": "prettier --check **/*.ts",
     "prettier:fix": "prettier --write **/*.ts",
-    "pre-commit": "npm run  prettier && npm run lint && npm run typecheck && yarn lint-staged"
+    "pre-commit": "npm run  prettier && npm run lint && npm run typecheck && npm run test && yarn lint-staged"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,json,md}": [
