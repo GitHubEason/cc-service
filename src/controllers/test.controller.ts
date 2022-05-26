@@ -1,11 +1,12 @@
 //TODO: test
 import { Request, Response } from "express";
+import Test from "../models/test";
 
 /**
  * @swagger
  * /api/v1/test:
  *  get:
- *    summary: return hello world
+ *    summary:
  *    tags: [Test]
  *    parameters:
  *    responses:
@@ -17,12 +18,11 @@ import { Request, Response } from "express";
  *              type: string
  */
 
-const getTest = async (req: Request, res: Response) => {
+export async function getTest(req: Request, res: Response) {
   try {
-    res.status(200).send("hello world");
+    const test = await Test.find().exec();
+    res.json(test);
   } catch (e: any) {
     res.status(500).send(e.message);
   }
-};
-
-export = getTest;
+}
