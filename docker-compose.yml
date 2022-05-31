@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  app:
+    container_name: cc-server
+    restart: always
+    build: .
+    environment: 
+      - PORT=8080
+      - MONGO_URI=mongodb://mongo/test
+    ports: 
+      - "8080:8080" 
+    links: 
+      - mongo
+  mongo:
+    container_name: cc-mongo
+    image: mongo
+    ports:
+      - "27017:27017" 

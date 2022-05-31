@@ -1,4 +1,4 @@
-import { MONGO_URI } from "../config/config";
+import { MONGO_URI } from "../config";
 import mongoose from "mongoose";
 
 export function connectToDB() {

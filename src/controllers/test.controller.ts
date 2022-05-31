@@ -19,10 +19,6 @@ import Test from "../models/test";
  */
 
 export async function getTest(req: Request, res: Response) {
-  try {
-    const test = await Test.find().exec();
-    res.json(test);
-  } catch (e: any) {
-    res.status(500).send(e.message);
-  }
+  const test = await Test.find().exec();
+  res.json(test);
 }
