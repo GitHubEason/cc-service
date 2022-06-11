@@ -9,23 +9,16 @@ pipeline {
         GIT_HASH = GIT_COMMIT.take(7)
         IMAGE_TAG="$BUILD_NUMBER" + "-" + "$GIT_HASH" + "-" + "$BUILD_TIMESTAMP"
         exec_role_arn = "arn:aws:iam::497551902879:role/ecsTaskExecutionRole"
-        AWS_ECS_TASKDEF_NAME="CCS-F-UAT-TASKD"
-        task_def_arn="arn:aws:ecs:ap-southeast-2:497551902879:task-definition/CCS-F-UAT-TASKD"
-        AWS_ECS_CLUSTER="CCS-F-UAT-Cluster"
-        AWS_ECS_SERVICE="CCS-F-UAT-Service"
+        AWS_ECS_TASKDEF_NAME="CCS-F-UAT-task"
+        task_def_arn="arn:aws:ecs:ap-southeast-2:497551902879:task-definition/CCS-F-UAT-task"
+        AWS_ECS_CLUSTER="CCS-F-UAT-cluster"
+        AWS_ECS_SERVICE="CCS-F-UAT-service"
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
 
     }
       
     stages {
-
-        stage('Cleanup Workspace') {
-            steps {
-                cleanWs()
-                echo "Cleaned Up Workspace For Project"
-            }
-        }
-
+	    
         stage("Clone Source code from Github") {
             steps {
                 checkout scm
@@ -52,7 +45,7 @@ pipeline {
         }    
         stage('Push to ECR') {
             when {
-                branch 'main'
+                branch 'devops-test-tf'
             }
             steps {
                 echo "Logging into ECR..."
@@ -67,7 +60,7 @@ pipeline {
 
         stage('Deploy to UAT Environment') {
             when {
-                branch 'main'
+                branch 'devops-test-tf'
             }
             steps {
                 // AWS CLI must be installed in the Jenkins server first. 
@@ -97,7 +90,12 @@ pipeline {
                   echo "Clear Up Docker Image..."
                   sh 'docker rmi ${IMAGE_REPO_NAME}:${IMAGE_TAG}' 
             }
+          }
         }
-    }
+      post {
+	      always {
+                     cleanWs()
+               }
+	   }	  	
    }                 
         

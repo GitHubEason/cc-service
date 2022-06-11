@@ -1,9 +1,9 @@
 {
-    "family": "CCS-F-UAT-TASKD",
+    "family": "CCS-F-UAT-task",
     "networkMode": "awsvpc",
     "containerDefinitions": [
         {
-            "name": "CCS-F-UAT-CONTAINER",
+            "name": "CCS-F-UAT-container",
             "image": "{{image}}",
             "portMappings": [
                 {
