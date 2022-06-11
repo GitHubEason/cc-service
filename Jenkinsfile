@@ -45,7 +45,7 @@ pipeline {
         }    
         stage('Push to ECR') {
             when {
-                branch 'devops-test-tf'
+                branch 'main'
             }
             steps {
                 echo "Logging into ECR..."
@@ -60,7 +60,7 @@ pipeline {
 
         stage('Deploy to UAT Environment') {
             when {
-                branch 'devops-test-tf'
+                branch 'main'
             }
             steps {
                 // AWS CLI must be installed in the Jenkins server first. 
